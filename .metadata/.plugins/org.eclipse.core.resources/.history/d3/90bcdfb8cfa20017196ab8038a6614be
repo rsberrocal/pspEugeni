@@ -14,8 +14,8 @@ public class UsoEmpleado {
 			if(i==1){
 				emp[i].addSueldo(150);
 			}
-			System.out.println("Nombre:"+emp[i].getNombre());
-			System.out.println("Sueldo:"+emp[i].getSueldo());
+			System.out.println("Nombre:"+emp1.getNombre());
+			System.out.println("Sueldo:"+emp1.getSueldo());
 		}		
     }
 	

@@ -1,0 +1,12 @@
+package conceptos;
+
+public class UsoEmpleado {
+	
+	public static void main(String[] args) {
+		Empleado emp = new Empleado("Richard",100);
+		emp.addSueldo(50);
+		System.out.println("Nombre:"+emp.getNombre());
+		System.out.println("Sueldo:"+emp.getSueldo());
+    }
+	
+}

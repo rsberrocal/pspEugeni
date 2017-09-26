@@ -13,11 +13,7 @@ public class Empleado {
 		this.sueldo = sueldo;
 		this.seccion = "Administración";
 	}
-	
-	public void addSueldo(double per){
-		this.sueldo+=(this.sueldo*per)/100;
-	}
-	
+
 	public String getDni() {
 		return dni;
 	}

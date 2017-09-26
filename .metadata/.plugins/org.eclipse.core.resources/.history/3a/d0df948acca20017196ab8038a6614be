@@ -1,13 +1,12 @@
 package conceptos;
 
 public class Empleado {
-	//Clase para empleados
 	private String dni;
 	private String nombre;
 	private String apellidos;
 	private String seccion;
 	private double sueldo;
-	
+
 	Empleado(String nombre, double sueldo) {
 		this.nombre = nombre;
 		this.sueldo = sueldo;

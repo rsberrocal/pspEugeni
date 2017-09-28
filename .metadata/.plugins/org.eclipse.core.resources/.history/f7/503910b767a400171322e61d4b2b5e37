@@ -1,0 +1,18 @@
+package conceptos;
+
+public class UsoEmpleado {
+	
+	public static void main(String[] args) {
+		Empleado[] emp = new Empleado[3];
+		for(int j=0;j<emp.length;j++){
+			emp[j]=new Empleado(("Empleado "+j), 25*j);
+		}
+		for(int i=0;i<emp.length;i++){
+			if(i==1){
+				emp[i].addSueldo(150);
+			}
+			System.out.println("Nombre:"+emp[i].getNombre());
+			System.out.println("Sueldo:"+emp[i].getSueldo());
+		}		
+    }
+}

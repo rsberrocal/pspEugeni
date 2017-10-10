@@ -1,5 +1,8 @@
 package conceptos;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class Empleado {
     //Clase para empleados
     private String dni;
@@ -7,11 +10,12 @@ public class Empleado {
     private String apellidos;
     private String seccion;
     private double sueldo;
+    private Date fechaContrato;
 
-    Empleado(){
+    Empleado() {
         this.nombre = "Ana";
-        this.sueldo=20000;
-        this.seccion="Administracion";
+        this.sueldo = 20000;
+        this.seccion = "Administracion";
     }
 
     Empleado(String nombre, double sueldo) {
@@ -20,14 +24,29 @@ public class Empleado {
         this.seccion = "Administración";
     }
 
-    Empleado(String nombre,double sueldo,String seccion){
+    Empleado(String nombre, double sueldo, String seccion) {
         this.nombre = nombre;
         this.sueldo = sueldo;
         this.seccion = seccion;
     }
 
-    public void addSueldo(double per){
-        this.sueldo+=(this.sueldo*per)/100;
+    Empleado(String nombre, double sueldo, String seccion, int ano, int mes, int dia) {
+        this.nombre = nombre;
+        this.sueldo = sueldo;
+        this.seccion = seccion;
+        if (mes > 0) {
+            mes += -1;
+        }
+        GregorianCalendar gregorio = new GregorianCalendar(ano, mes, dia);
+        this.fechaContrato = gregorio.getTime();
+    }
+
+    public String fechaToString() {
+        return this.fechaContrato.toString();
+    }
+
+    public void addSueldo(double per) {
+        this.sueldo += (this.sueldo * per) / 100;
     }
 
     public String getDni() {

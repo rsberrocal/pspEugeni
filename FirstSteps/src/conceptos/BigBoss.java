@@ -1,10 +1,10 @@
 package conceptos;
 
-public class BigBoss extends Empleado{
+public class BigBoss extends Empleado {
 
     private double incentivo;
 
-    public BigBoss(){
+    public BigBoss() {
 
     }
 
@@ -15,7 +15,7 @@ public class BigBoss extends Empleado{
 
     @Override
     public double getSueldo() {
-        return super.getSueldo()+this.incentivo;
+        return super.getSueldo() + this.incentivo;
     }
 
     public double getIncentivo() {

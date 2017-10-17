@@ -19,7 +19,7 @@ public class Main {
         for(int j=0;j<3;j++){
             nombre = "Empleado "+j;
             if(j==0){
-                nombre = "Richard";
+                emp.add(new Empleado("Richard", 400));
             }
             emp.add(new Empleado(nombre, 120));
 
@@ -41,7 +41,9 @@ public class Main {
         Collections.sort(emp, new Comparator<Empleado>() {
             @Override
             public int compare(Empleado empleado, Empleado t1) {
-                return new Integer((int) empleado.getSueldo()).compareTo((int)t1.getSueldo());
+                int num;
+                num = new Integer((int) empleado.getSueldo()).compareTo((int)t1.getSueldo());
+                return num;
             }
         });
         for (int i = 0; i < emp.size() ; i++) {

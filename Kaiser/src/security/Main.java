@@ -11,13 +11,14 @@ public class Main {
         String finalText="";
         int i=0;
         int j=0;
+        int letraNum=0;
         while(!done){
             if (r[i]==alphabet.get(j)){
-                if((j+n)>alphabet.size()-1){
-                    finalText=finalText+alphabet.get((j+n)-alphabet.size());
-                }else{
-                    finalText=finalText+alphabet.get(j+n);
+                letraNum=j+n;
+                while(letraNum>alphabet.size()-1){
+                    letraNum=letraNum-alphabet.size();
                 }
+                finalText=finalText+alphabet.get(letraNum);
                 i++;
             }
             j++;
@@ -61,8 +62,6 @@ public class Main {
         for (int i=0;i<k.length();i++){
             c.add(k.charAt(i));
         }
-
-
         return c;
     }
 

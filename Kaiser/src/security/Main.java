@@ -37,13 +37,14 @@ public class Main {
         String finalText="";
         int i=0;
         int j=alphabet.size()-1;
+        int letraNum=0;
         while(!done){
             if (r[i]==alphabet.get(j)){
-                if((j-n)<0){
-                    finalText=finalText+alphabet.get((j-n)+alphabet.size());
-                }else{
-                    finalText=finalText+alphabet.get(j-n);
+                letraNum=j-n;
+                while (letraNum<0){
+                    letraNum=letraNum+alphabet.size();
                 }
+                finalText=finalText+alphabet.get(letraNum);
                 i++;
             }
             j--;
@@ -87,7 +88,8 @@ public class Main {
                     System.out.println("Dame el numero para intercambiar");
                     changeNum = sc.nextInt();
                     System.out.println("Dame la frase a cifrar");
-                    textEncrypt=sc.next();
+                    sc.nextLine();
+                    textEncrypt=sc.nextLine();
                     textEncrypt=cesar(textEncrypt,changeNum);
                     System.out.println("Frase cifrada");
                     System.out.println(textEncrypt);
@@ -97,7 +99,8 @@ public class Main {
                     System.out.println("Dame el numero para intercambiar");
                     changeNum = sc.nextInt();
                     System.out.println("Dame la frase a descifrar");
-                    textEncrypt=sc.next();
+                    sc.nextLine();
+                    textEncrypt=sc.nextLine();
                     textEncrypt=rasec(textEncrypt,changeNum);
                     System.out.println("Frase descifrada");
                     System.out.println(textEncrypt);

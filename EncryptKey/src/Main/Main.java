@@ -52,8 +52,7 @@ public class Main {
 
             Cipher Cyberman = Cipher.getInstance("AES");
             Cyberman.init(Cipher.DECRYPT_MODE,superKey);
-            System.out.println(DatatypeConverter.parseHexBinary(encryptedText).length);
-            textByte=Cyberman.doFinal(DatatypeConverter.parseHexBinary(encryptedText));
+            textByte=Cyberman.doFinal(encryptedText.getBytes());
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -99,7 +98,8 @@ public class Main {
                 textEncrypted=encryptWithHash(mainKey,textEncrypted);
                 System.out.println(textEncrypted);
                 System.out.println(DatatypeConverter.parseHexBinary(textEncrypted).length);
-                discoverKey(textEncrypted);
+                System.out.println(textEncrypted.getBytes().length);
+                //discoverKey(textEncrypted);
             }
         }while(numPass>=100||numPass<=0);
 

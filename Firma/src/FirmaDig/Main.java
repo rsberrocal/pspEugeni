@@ -146,7 +146,7 @@ public class Main {
             userPublicKey=loadPublicKey(fileKey);
             hashToCompare=decryptWithKey(userPublicKey,fileSign);
             hash=genHashFromFile(filename);
-            if(hash==hashToCompare){
+            if(Arrays.equals(hash,hashToCompare)){
                 System.out.println("El archivo es correcto e integro");
             }else {
                 System.out.println("El archivo ha sido tocado Errorror");

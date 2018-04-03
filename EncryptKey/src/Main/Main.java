@@ -77,28 +77,26 @@ public class Main {
     //Funcion para encontrar la llave que desencripta el texto
     public static void discoverKey(String encryptedText){
         //Boolean para saber cuando se ha encontrado
-        boolean found=false;
         int i=0;
         SecretKey posibleKey=null;
         byte[] posibleText;
         System.out.println("Buscando el texto descifrado");
         //Bucle para encontrar cada posiblidad de llave
-        while(!found||i>=100){
+        while(i<100){
             //Se genera un hash con el numero que toca
             posibleKey=genHash(i);
             //Se intenta desincriptar con esa llave
             posibleText=decryptWithHash(posibleKey,encryptedText);
             //Si no es un null es que la ha encontrado
             if(posibleText!=null){
-                System.out.println("¡¡Encontrado!!");
+                System.out.println("Una posible solucion");
+                System.out.println("--- ------- --------");
                 //Se pasa el array de bits a Base64 para desencriptarlo y que salga el texto original
                 System.out.println(new String(Base64.getDecoder().decode(DatatypeConverter.printBase64Binary(posibleText))));
-                //Al encontrarse la frase se pone el boolean a true
-                found=true;
-            }else{
-                //Si no la encuentra suma el contador para la siguiente iteracion
-                i++;
+                //Al encontrarse la frase se pone el boolean a true45
             }
+            //Si no la encuentra suma el contador para la siguiente iteracion
+            i++;
         }
     }
 

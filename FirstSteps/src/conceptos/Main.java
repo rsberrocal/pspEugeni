@@ -16,14 +16,10 @@ public class Main {
         Random rnd = new Random();
         String nombre;
 
-        for(int j=0;j<3;j++){
-            nombre = "Empleado "+j;
-            if(j==0){
-                emp.add(new Empleado("Richard", 400));
-            }
-            emp.add(new Empleado(nombre, 120));
-
-        }
+        emp.add(new Empleado("Richard", 400));
+        emp.add(new Empleado("Alex", 400));
+        emp.add(new Empleado("Tarzan", 400));
+        emp.add(new Empleado("David", 400));
         finalBoss=levelUp(emp.get(0),1000);
         for(int i=0;i<emp.size();i++){
             if(emp.get(i).getNombre()==finalBoss.getNombre()){
@@ -42,7 +38,7 @@ public class Main {
             @Override
             public int compare(Empleado empleado, Empleado t1) {
                 int num;
-                num = new Integer((int) empleado.getSueldo()).compareTo((int)t1.getSueldo());
+                num = new String(empleado.getNombre()).compareTo((String)t1.getNombre());
                 return num;
             }
         });
